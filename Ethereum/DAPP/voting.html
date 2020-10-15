@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Voting</title>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="container bg-light">
+    <div class="container-fluid  py-5">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card card-body">
+            <h3 class="text-center mb-4">Results</h3>
+            <div class="alert alert-danger d-none" id="error-wrapper"></div>
+            <div class="alert alert-success d-none" id="winner-wrapper"></div>
+            <div class="container">
+              <div id="candidates-wrapper">
+                <p>Loading Candidates</p>
+              </div>
+            </div>
+            <fieldset>
+              <div class="form-group">
+                <label for="candidate">Candidate ID</label>
+                <input
+                  type="text"
+                  id="candidate"
+                  class="form-control input-lg"
+                />
+              </div>
+              <div class="form-group">
+                <label for="candidate">Wallet Address</label>
+                <select class="form-control input-lg" id="address">
+                  <!-- <option id="address" selecterd="">Loading...</option> -->
+                </select>
+              </div>
+              <input
+                id="vote-button"
+                class="btn btn-lg btn-primary btn-block"
+                onclick="voteForCandidate()"
+                value="Vote"
+                type="submit"
+              />
+            </fieldset>
+            <input
+              id="close-button"
+              class="btn btn-lg btn-danger btn-block mt-2"
+              onclick="closeVoting()"
+              value="Close"
+              type="button"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/web3.js"></script>
+  <script src="./js/jquery-3.2.1.min.js"></script>
+  <script src="./js/index.js"></script>
+</html>
